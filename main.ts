@@ -1,7 +1,7 @@
-let tone = 0
 let beat = 0
+let tone = 0
 basic.forever(function () {
-    tone = Math.map(input.temperature(), -5, 50, 200, 800)
-    beat = Math.map(input.temperature(), -5, 50, 1000, 62.5)
+    beat = Math.map(input.temperature(), -5, 50, music.beat(BeatFraction.Breve), music.beat(BeatFraction.Sixteenth))
+    tone = Math.map(input.temperature(), -5, 50, 100, 1000)
     music.playTone(tone, beat)
 })
